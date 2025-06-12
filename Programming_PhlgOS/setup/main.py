@@ -123,7 +123,7 @@ This is the last step in the OS installation. You can sit back and relax, but fe
         try:
             subprocess.run("apt install runit-init -y", check=True)
             subprocess.run("update-alternatives --set init /usr/bin/runit-init", check=True)
-        except subprocess.CalledProcessError:
+        except subprocess.CalledProcessError as e:
             print(f"Error in installing runit: {e}\nThe setup has gone wrong, and your system will not be usable. But don't worry, as your partition {install_destination} was not touched. You can fix this error after the program exits using the shell.")
             exit(1)
     print(f"[+] You have finished installing the init system! You will move on to the next step. (installing your linux image which is {kernel_version})")
