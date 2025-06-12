@@ -129,7 +129,7 @@ This is the last step in the OS installation. You can sit back and relax, but fe
     print(f"[+] You have finished installing the init system! You will move on to the next step. (installing your linux image which is {kernel_version})")
     try:
         subprocess.run(f"apt install {kernel_version} -y", check=True)
-    except Subprocess.CalledProcessError as e:
+    except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}\nYou can fix this error with the shell that will appear after the program exits.")
         exit(1)
     except Exception as e:
@@ -158,7 +158,7 @@ This is the last step in the OS installation. You can sit back and relax, but fe
                 subprocess.run(f"useradd -m -s /bin/{shell} {username}", check=True)
                 print(f"[+] Done making a user with username {username}! You will apply the user's password now.") if password else print(f"[+] Done making a user with username {username}!")
                 if password:
-                    print(f"[...] Making a password for the user {user} (password: {password})")
+                    print(f"[...] Making a password for the user {username} (password: {password})")
                     subprocess.run(f"chpasswd {username}:{password}")
         except subprocess.CalledProcessError as e:
             print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
@@ -167,6 +167,8 @@ This is the last step in the OS installation. You can sit back and relax, but fe
             print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
             exit(1)
     
+    print()
+
 except KeyboardInterrupt:
     subprocess.run("clear")
     print("Exiting...")
