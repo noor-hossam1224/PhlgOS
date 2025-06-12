@@ -1,0 +1,11 @@
+dffb13c57bb40678cfc3cc341bfb836b  usr/share/bash-completion/completions/py
+65df77e02dd141ac962ba0280cb7c8b0  usr/share/doc/pythonpy/changelog.Debian.gz
+c9980f57d4a9b5ca24060338cff26d92  usr/share/doc/pythonpy/changelog.gz
+c11f4ffd149fa6dd2f20323f7680469d  usr/share/doc/pythonpy/copyright
+29af514c00ef341e57cc4164474756d0  usr/share/man/man1/py.1.gz
+7fe8d035910fde8a7eee7f0d0ff06065  usr/share/python3/runtime.d/pythonpy.rtupdate
+41db62be26f61bf5f54e9739d034b2b2  usr/share/pythonpy/pythonpy/__init__.py
+b3e795244959d0555b3f7a26cf03bf92  usr/share/pythonpy/pythonpy/__main__.py
+d41d8cd98f00b204e9800998ecf8427e  usr/share/pythonpy/pythonpy/completion/__init__.py
+dffb13c57bb40678cfc3cc341bfb836b  usr/share/pythonpy/pythonpy/completion/pycompletion.sh
+a5528024497cee6f5b2c843a1ef8a359  usr/share/pythonpy/pythonpy/pycompleter.py

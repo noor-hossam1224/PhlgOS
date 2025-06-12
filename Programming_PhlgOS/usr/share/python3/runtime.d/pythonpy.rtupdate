@@ -1,0 +1,7 @@
+#! /bin/sh
+set -e
+
+if [ "$1" = rtupdate ]; then
+	py3clean -p pythonpy /usr/share/pythonpy
+	py3compile -p pythonpy  /usr/share/pythonpy
+fi

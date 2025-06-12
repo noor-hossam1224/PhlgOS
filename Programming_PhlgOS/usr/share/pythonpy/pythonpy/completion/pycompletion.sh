@@ -1,0 +1,11 @@
+_py()
+{
+    COMPREPLY=($(/usr/share/pythonpy/pythonpy/pycompleter.py "${COMP_WORDS[@]}" 2>/dev/null | sed 's/.*1034h//'))
+    if [[ ${COMPREPLY[0]} == '_longopt' ]]; then
+        COMPREPLY=()
+        _longopt 2>/dev/null
+    fi
+}
+
+
+complete -F _py -o nospace py

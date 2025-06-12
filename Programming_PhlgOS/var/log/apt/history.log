@@ -1,0 +1,5 @@
+
+Start-Date: 2025-06-09  09:55:23
+Commandline: apt install pythonpy
+Install: python3.11:amd64 (3.11.2-6+deb12u6, automatic), python3-minimal:amd64 (3.11.2-1+b1, automatic), libexpat1:amd64 (2.5.0-1+deb12u1, automatic), python3:amd64 (3.11.2-1+b1, automatic), libpython3.11-minimal:amd64 (3.11.2-6+deb12u6, automatic), media-types:amd64 (10.0.0, automatic), pythonpy:amd64 (0.4.11b-3.1), libnsl2:amd64 (1.3.0-2, automatic), libpython3.11-stdlib:amd64 (3.11.2-6+deb12u6, automatic), libsqlite3-0:amd64 (3.40.1-2+deb12u1, automatic), ca-certificates:amd64 (20230311, automatic), libpython3-stdlib:amd64 (3.11.2-1+b1, automatic), python3.11-minimal:amd64 (3.11.2-6+deb12u6, automatic), openssl:amd64 (3.0.16-1~deb12u1, automatic)
+End-Date: 2025-06-09  09:55:37
