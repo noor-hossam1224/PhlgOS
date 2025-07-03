@@ -52,14 +52,22 @@ Available kernels:
 >""")
     
     def ask_net_conf():
+        return_val = []
         net_conf = input(r"""In this step you will configure your internet. Type 1 to use DHCP, or type 2 to use a static IP.
 >""")
         if net_conf == '1':
-            return 'dhcp'
+            return_val.append('dhcp')
         elif net_conf == '2':
-            return 'static'
-        print("That isn't a valid choice. Let's try this again.")
-        ask_net_conf()
+            return_val.append('static')
+        else:
+            print("That isn't a valid choice. Let's try this again.")
+            ask_net_conf()
+        interface = input(rf"""You will see all interfaces, choose your internet connection (not \"lo\")
+Connections:
+{subprocess.run("ip link show", capture_output=True, text=True).stdout}
+>""")
+        return_val.append(interface)
+        return return_val
     net_conf = ask_net_conf()
 
     def choose_bootloader():
@@ -169,6 +177,20 @@ This is the last step in the OS installation. You can sit back and relax, but fe
 
     print("[+] You have applied your credentials!"
           "You will move on to the next step (configuring your internet settings)")
+    try:
+        if net_conf[0] == 'dhcp':
+            print("[...] Setting up DHCP...")
+            subprocess.run([f"ip link set {net_conf[1]} up"], check=True)
+            subprocess.run([f"dhclient {net_conf[1]}"], check=True)
+        elif net_conf[0] == 'static':
+            """Continue later"""
+
+    except subprocess.CalledProcessError as e:
+        print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
+        exit(1)
+    except Exception as e:
+        print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
+        exit(1)
 
 except KeyboardInterrupt:
     subprocess.run("clear")
@@ -177,5 +199,5 @@ except KeyboardInterrupt:
     exit(130)
     
 except Exception as e:
-    input(f"An unexpected error occurred: {e}\nYou can press any key to exit (you can fix the error in the shell after this program exits).")
+    input(f"An unexpected error occurred: {e}\nYou can press any key to exit. (you can fix the error in the shell after this program exits).")
     exit(1)
