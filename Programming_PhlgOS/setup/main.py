@@ -166,8 +166,9 @@ This is the last step in the OS installation. You can sit back and relax, but fe
         except Exception as e:
             print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
             exit(1)
-    
-    print()
+
+    print("[+] You have applied your credentials!"
+          "You will move on to the next step (configuring your internet settings)")
 
 except KeyboardInterrupt:
     subprocess.run("clear")
@@ -176,5 +177,5 @@ except KeyboardInterrupt:
     exit(130)
     
 except Exception as e:
-    input(f"An unexpected error occured: {e}\nYou can press any key to exit (you can fix the error in the shell after this program exits).")
+    input(f"An unexpected error occurred: {e}\nYou can press any key to exit (you can fix the error in the shell after this program exits).")
     exit(1)
