@@ -52,21 +52,32 @@ Available kernels:
 >""")
     
     def ask_net_conf():
-        return_val = []
+        return_val = {}
         net_conf = input(r"""In this step you will configure your internet. Type 1 to use DHCP, or type 2 to use a static IP.
 >""")
         if net_conf == '1':
-            return_val.append('dhcp')
+            return_val['network_type'] = 'dhcp'
         elif net_conf == '2':
-            return_val.append('static')
+            return_val['network_type'] = 'static'
         else:
             print("That isn't a valid choice. Let's try this again.")
             ask_net_conf()
-        interface = input(rf"""You will see all interfaces, choose your internet connection (not \"lo\")
+            return
+        interface = input(rf"""You will see all interfaces, choose your internet connection (The lo interface doesn't matter).
 Connections:
 {subprocess.run("ip link show", capture_output=True, text=True).stdout}
 >""")
-        return_val.append(interface)
+        return_val['interface'] = interface
+        if return_val['network_type'] == 'static':
+            addr = input(r"""Enter your static IP address with CIDR (eg. \"/24\") (make sure this isn't already registered on your network)
+>""")
+            return_val['address'] = addr
+            gateway_addr = input(r"""Gateway address (example: 192.168.1.1)
+>""")
+            return_val['gateway'] = gateway_addr
+            dns = input(r"""Enter DNS server (example: 1.1.1.1 or 8.8.8.8):
+>""")
+            return_val['dns'] = dns
         return return_val
     net_conf = ask_net_conf()
 
@@ -178,12 +189,12 @@ This is the last step in the OS installation. You can sit back and relax, but fe
     print("[+] You have applied your credentials!"
           "You will move on to the next step (configuring your internet settings)")
     try:
-        if net_conf[0] == 'dhcp':
+        if net_conf['network_type'] == 'dhcp':
             print("[...] Setting up DHCP...")
-            subprocess.run([f"ip link set {net_conf[1]} up"], check=True)
-            subprocess.run([f"dhclient {net_conf[1]}"], check=True)
-        elif net_conf[0] == 'static':
-            """Continue later"""
+            subprocess.run([f"ip link set {net_conf['interface']} up"], check=True)
+            subprocess.run([f"dhclient {net_conf['interface']}"], check=True)
+        elif net_conf['network_type'] == 'static':
+            subprocess.run('')
 
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}\nYou can fix this error with the shell after the program exits.")
