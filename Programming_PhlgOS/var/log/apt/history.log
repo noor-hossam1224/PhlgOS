@@ -3,3 +3,15 @@ Start-Date: 2025-06-09  09:55:23
 Commandline: apt install pythonpy
 Install: python3.11:amd64 (3.11.2-6+deb12u6, automatic), python3-minimal:amd64 (3.11.2-1+b1, automatic), libexpat1:amd64 (2.5.0-1+deb12u1, automatic), python3:amd64 (3.11.2-1+b1, automatic), libpython3.11-minimal:amd64 (3.11.2-6+deb12u6, automatic), media-types:amd64 (10.0.0, automatic), pythonpy:amd64 (0.4.11b-3.1), libnsl2:amd64 (1.3.0-2, automatic), libpython3.11-stdlib:amd64 (3.11.2-6+deb12u6, automatic), libsqlite3-0:amd64 (3.40.1-2+deb12u1, automatic), ca-certificates:amd64 (20230311, automatic), libpython3-stdlib:amd64 (3.11.2-1+b1, automatic), python3.11-minimal:amd64 (3.11.2-6+deb12u6, automatic), openssl:amd64 (3.0.16-1~deb12u1, automatic)
 End-Date: 2025-06-09  09:55:37
+
+Start-Date: 2025-07-06  21:43:30
+Commandline: apt install grub-pc os-prober -y
+Install: libfuse2:amd64 (2.9.9-6+b1, automatic), ucf:amd64 (3.0043+nmu1+deb12u1, automatic), grub-pc-bin:amd64 (2.06-13+deb12u1, automatic), libefivar1:amd64 (37-6, automatic), os-prober:amd64 (1.81), libfreetype6:amd64 (2.12.1+dfsg-5+deb12u4, automatic), libpng16-16:amd64 (1.6.39-2, automatic), gettext-base:amd64 (0.21-12, automatic), libefiboot1:amd64 (37-6, automatic), grub2-common:amd64 (2.06-13+deb12u1, automatic), libbrotli1:amd64 (1.0.9-2+b6, automatic), grub-common:amd64 (2.06-13+deb12u1, automatic), grub-pc:amd64 (2.06-13+deb12u1)
+Error: Sub-process /usr/bin/dpkg exited unexpectedly
+End-Date: 2025-07-06  21:43:36
+
+Start-Date: 2025-07-06  22:00:05
+Commandline: apt install grub-pc os-prober -y
+Install: os-prober:amd64 (1.81), grub-pc:amd64 (2.06-13+deb12u1)
+Upgrade: grub-pc-bin:amd64 (2.06-13+deb12u1, 2.06-13+deb12u1)
+End-Date: 2025-07-06  22:00:09

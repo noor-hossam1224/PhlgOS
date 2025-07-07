@@ -1,3 +1,26 @@
 
 Log started: 2025-06-09  09:55:23
 Log ended: 2025-06-09  09:55:37
+
+Log started: 2025-07-06  21:43:30
+Log ended: 2025-07-06  21:43:36
+
+Log started: 2025-07-06  22:00:05
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 10338 files and directories currently installed.)
+Preparing to unpack .../grub-pc-bin_2.06-13+deb12u1_amd64.deb ...
+Unpacking grub-pc-bin (2.06-13+deb12u1) over (2.06-13+deb12u1) ...
+Selecting previously unselected package grub-pc.
+Preparing to unpack .../grub-pc_2.06-13+deb12u1_amd64.deb ...
+Unpacking grub-pc (2.06-13+deb12u1) ...
+Selecting previously unselected package os-prober.
+Preparing to unpack .../os-prober_1.81_amd64.deb ...
+Unpacking os-prober (1.81) ...
+Setting up grub-pc-bin (2.06-13+deb12u1) ...
+Setting up grub-pc (2.06-13+deb12u1) ...
+locale: Cannot set LC_CTYPE to default locale: No such file or directory
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory
+locale: Cannot set LC_ALL to default locale: No such file or directory
+
+Creating config file /etc/default/grub with new version
+Setting up os-prober (1.81) ...
+Log ended: 2025-07-06  22:00:09
